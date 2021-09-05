@@ -52,3 +52,47 @@ body {
     background-size: cover;
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.08);
 }
+
+.disk::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #5f7a61;
+}
+
+.song-slider {
+    width: 100%;
+    position: relative;
+}
+
+.seek-bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: #7fc8a9;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1px;
+    height: 20px;
+    box-shadow: -400px 0 0 400px #d5eebb;
+}
+
+.current-time,
+.song-duration {
+    font-size: 14px;
+}
+
+.song-duration {
+    position: absolute;
+    right: 0;
+}
