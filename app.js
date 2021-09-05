@@ -12,36 +12,7 @@ const playBtn = document.querySelector('.play-btn');
 const forwardBtn = document.querySelector('.forward-btn');
 const backwardBtn = document.querySelector('.backward-btn');
 
-const setMusic = (i) => {
-    seekBar.value = 0; // set range slide value to 0;
-    let song = songs[i];
-    currentMusic = i;
-    music.src = song.path;
 
-    songName.innerHTML = song.name;
-    artistName.innerHTML = song.artist;
-    disk.style.backgroundImage = `url('${song.cover}')`;
-
-    currentTime.innerHTML = '00:00';
-    setTimeout(() => {
-        seekBar.max = music.duration;
-        musicDuration.innerHTML = formatTime(music.duration);
-    }, 300);
-}
-
-setMusic(0);
-
-const formatTime = (time) => {
-    let min = Math.floor(time / 60);
-    if (min < 10) {
-        min = `0${min}`;
-    }
-    let sec = Math.floor(time % 60);
-    if (sec < 10) {
-        sec = `0${sec}`;
-    }
-    return `${min} : ${sec}`;
-}
 
 
 playBtn.addEventListener('click', () => {
